@@ -59,5 +59,3 @@ streamlit run app1.py
 - Currently supports single-session use (chat history resets on refresh)
 - Free-tier LLM API may have rate limits
 
-## Author
-Gouri — Built as part of an AI/ML case study project
