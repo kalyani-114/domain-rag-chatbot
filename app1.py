@@ -125,8 +125,9 @@ if question:
     else:
         retrieved = retrieve_chunks(question, st.session_state.index, st.session_state.chunks)
         answer = generate_answer(question, retrieved)
-        sources = ", ".join(set(f"Page {c['page_number']}" for c in retrieved))
-        answer += f"\n\n**Source:** {sources}"
+        if "could not find this information" not in answer.lower():
+            sources = ", ".join(set(f"Page {c['page_number']}" for c in retrieved))
+            answer += f"\n\n**Source:** {sources}"
 
     st.session_state.chat_history.append(("assistant", answer))
     with st.chat_message("assistant"):
