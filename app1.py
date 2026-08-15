@@ -79,9 +79,7 @@ def generate_answer(question, retrieved_chunks):
     context = "\n\n".join([chunk["text"] for chunk in retrieved_chunks])
     prompt = f"""You are a document question-answering assistant.
 Answer only from the supplied context. If the answer is not available, say:
-"I could not find this information in the uploaded documents."
-Do not invent facts.
-Give either the refusal sentence or the answer. Never give both in the same response.
+If the context contains the answer, give only the answer with no refusal language. Only use the refusal sentence if the context truly does not contain the answer.
 
 Context:
 {context}
