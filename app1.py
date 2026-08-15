@@ -81,6 +81,7 @@ def generate_answer(question, retrieved_chunks):
 Answer only from the supplied context. If the answer is not available, say:
 "I could not find this information in the uploaded documents."
 Do not invent facts.
+Give either the refusal sentence or the answer. Never give both in the same response.
 
 Context:
 {context}
